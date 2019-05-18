@@ -1,0 +1,115 @@
+{% extends  "baseLogOut.html" %}
+{% load static %}
+{% block title %}Услуги{% endblock %}
+{% block information %}
+<script src="{% static 'mainApp/js/jquery-3.4.1.min.js' %}"></script>
+<div> 
+    <div id="choice_doc">
+        <h3>Услуги</h3>
+        <ul>
+        <li><button id="btn2">Андрология</button></li>
+        <li><button id="btn3">Анестезиология</button></li>
+        <li><button id="btn4">Венерология</button></li>
+        <li><button id="btn5">Гастроэнтерология</button></li>
+        <li><button id="btn6">Гинекология</button></li>
+        <li><button id="btn7">Кардиология</button></li>
+        <li><button id="btn8">Логопедия</button></li>
+        <li><button id="btn9">Маммология</button></li>
+        <li><button id="btn1">Невропатология</button></li>
+        <li><button id="btn10">Неврология</button></li>
+        <li><button id="btn11">Нейрохирургия</button></li>
+        <li><button id="btn12">Оториноларингология</button></li>
+        <li><button id="btn13">Офтальмология</button></li>
+        <li><button id="btn14">Педиатрия</button></li>
+        <li><button id="btn15">Проктология</button></li>
+        <li><button id="btn16">Терапевтия</button></li>
+        <li><button id="btn17">Урология</button></li>
+        <li><button id="btn18">Хирургия</button></li>
+        <li><button id="btn19">Эндокринология</button></li>
+    </ul>
+</div>
+<div id="uslugi_list">
+        <div id="info_uslugi">{% if not doc_venero %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_venero %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}</div>
+</div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#btn1").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_nevrop %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_nevrop %}<li><div><img src='{% static d.image %}'/></div><div><a href='{% url 'mainApp:uslugi_pk' d.pk %}'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn2").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_androl %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_androl %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn3").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_aneste %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_aneste %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn4").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_venero %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_venero %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn5").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_gastro %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_gastro %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn6").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_gineko%}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_gineko %}<li><div><img src='{% static d.image %}'/></div><div><a href='/{{d.id}}'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn7").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_kardio %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_kardio %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn8").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_logope %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_logope %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn9").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_mammol %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_mammol %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn10").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_nevrol %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_nevrol %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn11").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_neuroh %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_neuroh %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn12").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_otolor %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_otolor %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn13").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_oftalm %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_oftalm %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn14").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_pediat %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_pediat %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn15").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_prokto%}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_prokto %}<li><div><img src='{% static d.image %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn16").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_terapi %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_terapi %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn17").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_urolog %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_urolog %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn18").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_hirurg %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_hirurg %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+        $("#btn19").click(function(){ 
+            $("#info_uslugi").html("{% if not doc_endokr %}<h1>Данный вид услуг временно не работает!</h1>{%else%}<ul>{% for d in doc_endokr %}<li><div><img src='{% static d.photo %}'/></div><div><a href='#'>{{d.name}}</a></div><div>{{d.price}} Рублей</div></li>{%endfor%}</ul>{%endif%}")
+
+        });
+    });
+    </script>
+{% endblock %}

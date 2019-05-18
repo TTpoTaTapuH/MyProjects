@@ -1,0 +1,34 @@
+{% extends  "baseLogOut.html" %}
+{% load static %}
+{% block title %}Вход{% endblock %}
+{% block information %}
+            <div style="margin: 120px 0 170px 400px;">
+                {% if user.is_authenticated %}
+                <p>Вы уже выполнили вход.</p>
+                {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <legend>Войти</legend>
+                        <table class="table" style="width:220px;">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Логин:</th>
+                                    <td><input type="text" name="username" autofocus="" required="" id="id_username"></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Пароль:</th>
+                                    <td><input type="password" name="password" required="" id="id_password"></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"><small class="text-muted">
+                                            Не зарегистрирован? <a class="ml-2" href="/registration">Зарегистрироваться</a>
+                                        </small></th>
+                                    <td><button class="btn btn-outline-info" type="submit">Войти</button></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                </form>
+                {% endif %}
+            </div>
+{% endblock %}
