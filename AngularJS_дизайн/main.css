@@ -1,0 +1,85 @@
+/*
+CSS for the CS142 project #4 main page
+
+Since CSS uses a global name space for classes we should use class names starting with
+cs142-main- here.
+*/
+body{
+    background-color: #e7eeea;
+}
+img{
+    width: 300px;
+}
+.items:first-child{
+    margin-top: 40px;
+}
+.main_page{
+    background-color: #d8d8d8;
+    padding-bottom: 20px;
+}
+.items{
+    margin-top: 40px;
+    padding: 15px 20px 15px 10px;
+    border: 1px solid #a7b1b4;
+    background-color: rgb(202, 226, 231);
+    border-radius: 5px;
+}
+
+#doctors button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin:0;
+    padding:0;
+}
+#doctors td{
+    padding:0;
+    height: 45px;
+}
+#doctors{
+    border: 1px solid #9e8f8f;
+    margin-top: 0px;
+    background-color: #a8abb4; 
+}
+#doctors table{
+    margin-top:20px;
+}
+footer{
+    background-color: #c7c1c1;
+    text-align:center;
+    padding-bottom: 0;
+}
+footer p{
+    padding-bottom: 0;
+}
+.repeat_doctor{
+    margin-top: 20px;
+}
+.repeat_doctor img{
+    width: 200px;
+    height: 200px;
+}
+#doctor_id{
+    height: 100%;
+}
+.lpu_types{
+    line-height: 1.5em;
+}
+.lpu_types li{
+    list-style-type: none;
+    padding-right: 200px;
+}
+#us_left{
+    float: left;
+    padding: 0;
+    width: 350px;
+}
+#us_center{
+    margin-left: 20px;
+    width: 400px;
+}
+#us_rigth{
+    float: rigth;
+    margin-top: -500px;
+    width: 300px;
+}

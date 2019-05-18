@@ -1,0 +1,48 @@
+<!--Replaced this with the Angular template for states component of CS142 Project #4
+    Problem #2.-->
+<div id="doctors" class="container">
+    <table class="table table-sm table-inverse">
+        <thead>
+            <!-- В ячейках (`td` или `th`) -->  
+            <tr>
+              <td class="bg-primary"><button class="bg-primary" ng-model="doctor" ng-click="changeFull(0)">{{medicina[0]}}</button></td>
+              <td class="bg-success"><button class="bg-success" ng-model="doctor" ng-click="changeFull(1)">{{medicina[1]}}</button></td>
+              <td class="bg-warning"><button class="bg-warning" ng-model="doctor" ng-click="changeFull(2)">{{medicina[2]}}</button></td>
+              <td class="bg-danger"><button class="bg-danger" ng-model="doctor" ng-click="changeFull(3)">{{medicina[3]}}</button></td>
+              <td class="bg-info"><button class="bg-info" ng-model="doctor" ng-click="changeFull(4)">{{medicina[4]}}</button></td>
+            </tr>  
+            <tr>
+                <td class="bg-primary"><button class="bg-primary" ng-model="doctor" ng-click="changeFull(5)">{{medicina[5]}}</button></td>
+                <td class="bg-success"><button class="bg-success" ng-model="doctor" ng-click="changeFull(6)">{{medicina[6]}}</button></td>
+                <td class="bg-warning"><button class="bg-warning" ng-model="doctor" ng-click="changeFull(7)">{{medicina[7]}}</button></td>
+                <td class="bg-danger"><button class="bg-danger" ng-model="doctor" ng-click="changeFull(8)">{{medicina[8]}}</button></td>
+                <td class="bg-info"><button class="bg-info" ng-model="doctor" ng-click="changeFull(9)">{{medicina[9]}}</button></td>
+            </tr>
+            <tr>
+                <td class="bg-primary"><button class="bg-primary" ng-model="doctor" ng-click="changeFull(10)">{{medicina[10]}}</button></td>
+                <td class="bg-success"><button class="bg-success" ng-model="doctor" ng-click="changeFull(11)">{{medicina[11]}}</button></td>
+                <td class="bg-warning"><button class="bg-warning" ng-model="doctor" ng-click="changeFull(12)">{{medicina[12]}}</button></td>
+                <td class="bg-danger"><button class="bg-danger" ng-model="doctor" ng-click="changeFull(13)">{{medicina[13]}}</button></td>
+                <td class="bg-info"><button class="bg-info" ng-model="doctor" ng-click="changeFull(14)">{{medicina[14]}}</button></td>
+            </tr>  
+            <tr>
+                <td class="bg-primary"><button class="bg-primary" ng-model="doctor" ng-click="changeFull(15)">{{medicina[15]}}</button></td>
+                <td class="bg-success"><button class="bg-success" ng-model="doctor" ng-click="changeFull(16)">{{medicina[16]}}</button></td>
+                <td class="bg-warning"><button class="bg-warning" ng-model="doctor" ng-click="changeFull(17)">{{medicina[17]}}</button></td>
+                <td class="bg-danger"><button class="bg-danger" ng-model="doctor" ng-click="changeFull(18)">{{medicina[18]}}</button></td>
+            </tr>  
+        </thead>
+    </table>
+</div>
+<div id="doctor_id" class="container">
+    <div class="repeat_doctor" ng-repeat="item_doctor in inform.people">
+        <div class="media">
+            <img src="{{item_doctor.image}}" class="mr-3" alt="невролог">
+            <div class="media-body">
+                <h5 class="mt=0">{{item_doctor.name}}</h5>
+                Дожность:{{item_doctor.major}}
+                <p>Стаж работы: {{item_doctor.age_work}}</p>
+                    
+        </div>
+    </div>
+</div>

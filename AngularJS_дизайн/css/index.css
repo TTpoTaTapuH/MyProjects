@@ -1,0 +1,36 @@
+body{
+    background-color: #e7eeea;
+}
+img{
+    width: 300px;
+}
+.items:first-child{
+    margin-top: 50px;
+}
+.items{
+    margin-top: 50px;
+    padding: 15px 20px 15px 10px;
+    border: 1px solid #a7b1b4;
+    background-color: rgb(202, 226, 231);
+    border-radius: 5px;
+}
+
+#doctors button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin:0;
+    padding:0;
+}
+#doctors td{
+    padding:0;
+    height: 45px;
+}
+#doctors{
+    border: 1px solid #9e8f8f;
+    margin-top: 0px;
+    background-color: #051f75; 
+}
+#doctors table{
+    margin-top:20px;
+}

@@ -1,0 +1,25 @@
+<div id="main_page" class="container">
+    <div class="row">
+    <div ng-repeat="item in information" class="items">
+      <div class="media">
+        <img src="{{item.image}}" class="mr-3" alt="невролог">
+        <div class="media-body">
+            <h5 class="mt=0">{{item.title}}</h5>
+            {{item.text}}
+            <div ng-show="item.full">
+              <button type="button" ng-model="item.full" ng-click="changeFull(item)" class="btn btn-primary" name="modes">Скрыть</button>
+            </div>
+            <div ng-hide="item.full">
+              <button type="button" ng-model="item.full" ng-click="changeFull(item)" class="btn btn-primary" name="modes">Подробнее</button>
+            </div>
+        </div>
+      </div>
+      <div ng-show="item.full">
+          <p class="text-justify">{{item.full_text}}</p>
+          <h3><b>Симптомы:</b></h3>
+          <div ng-repeat="index in item.symptoms">
+            <i> - {{index}}</i>
+          </div>
+        <a href="#"><button type="button" ng-click="" class="btn btn-primary">Записаться на прием</button></a>
+      </div>
+    </div>
